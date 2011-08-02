@@ -1,0 +1,18 @@
+<%@ page import="org.pok.g2g.*"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%
+	Person p = new Person();
+	p.setName(request.getQueryString());
+	
+%>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Namn-test</title>
+</head>
+<body>
+	Namnet : <% out.println(p.getName()); %><br/>
+</body>
+</html>
