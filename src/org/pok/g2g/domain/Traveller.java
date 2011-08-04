@@ -11,6 +11,9 @@ import java.util.UUID;
 import org.pok.g2g.persistence.StorageFacade;
 
 /**
+ * A class that is responsible for storing information about a person
+ * that wants to register a journey or participate in someone elses
+ * journey.
  * @author Kristofer
  *
  */

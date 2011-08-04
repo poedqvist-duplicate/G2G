@@ -3,6 +3,8 @@ package org.pok.g2g.domain;
 import org.pok.g2g.domain.City;
 
 /**
+ * A class that is to keep track of a journeys start and endcities, the stops it 
+ * may have in different locations.
  * @author Kristofer
  *
  */
