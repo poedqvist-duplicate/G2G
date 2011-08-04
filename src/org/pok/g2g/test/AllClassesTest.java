@@ -7,6 +7,8 @@ import org.junit.Test;
 
 
 /**
+ * A class that creates instances of all testclasses and runs their
+ * methods.
  * @author Kristofer
  *
  */

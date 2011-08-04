@@ -6,6 +6,7 @@ package org.pok.g2g.test;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.UUID;
 
 import org.pok.g2g.domain.Traveller;
