@@ -10,5 +10,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="C:/Users/P-O&amp;Erika/git/Go2Gether/Go2Gether/libs/postgresql-9.0-801.jdbc4.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
