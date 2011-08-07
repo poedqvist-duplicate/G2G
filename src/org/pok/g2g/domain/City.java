@@ -5,6 +5,8 @@ package org.pok.g2g.domain;
  */
 
 /**
+ * A class that is to hold information about cities in Sweden. So far only 
+ * names implemented.
  * @author Kristofer
  *
  */

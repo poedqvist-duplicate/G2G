@@ -11,6 +11,9 @@ import java.util.UUID;
 import org.pok.g2g.persistence.StorageFacade;
 
 /**
+ * A class that is responsible for storing information about a person
+ * that wants to register a journey or participate in someone elses
+ * journey.
  * @author Kristofer
  *
  */
@@ -70,48 +73,5 @@ public class Traveller {
 		StorageFacade sf = new StorageFacade();
 		return sf.saveTraveller(this) == 1;
 	}
-	
-	/*
-    public int addTraveller(Traveller trav){
-		int retVal = -1;
-		if (isConnected()){
-		    String sqlString = String.format(
-			"INSERT INTO \"Travellers\" VALUES ('%s', '%s', '%s', %d);",
-			trav.getName(), trav.getId(), trav.getPhone(), trav.getAge());
-		    retVal = executeUpdate(sqlString);
-		}
-		return retVal;
-    }
-    
-    
-    //Get...
-    public Traveller getTraveller(UUID id){
-    	Traveller retTrav = null;
-		if (isConnected()){
-		    String query = "SELECT * FROM \"Travellers\" WHERE " +
-		    		   "Id = '" + id +
-		    		   "' ORDER BY Id;";
-		    ResultSet travellerSet = executeSQL(query);
-		    if ( travellerSet == null )
-		    	System.out.println("DEBUGG ME->NULL @ getCustomer!");
-		    try{
-		            while(travellerSet.next()){
-		        	retTrav = new Traveller(
-		        			travellerSet.getString(1),	//Name
-		        			travellerSet.getString(2),	//Id
-		        			travellerSet.getString(3),	//Phone
-		        			travellerSet.getString(4));	//Age
-		            }
-		            travellerSet.close();
-		        }catch (SQLException se){
-		            System.out.println("Exception while getting bookSet: " +
-		        	    "shouldnt happend: We've done something bad.");
-		            se.printStackTrace();
-		            System.out.println(se.getMessage());
-		        } 
-		}
-		return retTrav;
-    }
-    */
 
 }

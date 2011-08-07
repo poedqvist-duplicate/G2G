@@ -63,6 +63,7 @@ public class TravellerTest {
 		assertEquals("Stockholm", testArr.get(0).getEndCity());
 		
 	}
+	
 
 }
 
