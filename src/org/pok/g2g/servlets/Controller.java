@@ -53,5 +53,4 @@ public class Controller extends HttpServlet {
 		out.println("<html><head></head><body><p>Information to you: " + retVal + "</p></body></html>");
 	}
 	
-	
 }

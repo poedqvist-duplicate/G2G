@@ -16,6 +16,9 @@
 </script>
 </head>
 <body>
-<input type="button" id="btnTest" onclick="lib.test()" value="Klicka här" />
+<div id="kul">Ersätt</div>
+<input type="button" id="btnTest" onclick="lib.test1()" value="Klicka här" />
+<input type="button" id="btnAjax" onclick="return false;" value="Axaj-testa" />
+<input type="button" id="btnAjaxDone" onclick="return false;" value="Efter ajax" />
 </body>
 </html>
