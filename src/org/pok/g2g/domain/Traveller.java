@@ -23,7 +23,6 @@ public class Traveller {
 	private String phoneNumber;
 	private int age;
 	private UUID id;
-	private String password;
 	private ArrayList<Journey> journeys = new ArrayList<Journey>();	
 	
 	public String getName(){
