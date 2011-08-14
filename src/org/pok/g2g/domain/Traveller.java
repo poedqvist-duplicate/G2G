@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.UUID;
 
+import org.pok.g2g.helpers.JsonString;
 import org.pok.g2g.persistence.StorageFacade;
 
 /**
@@ -24,6 +25,10 @@ public class Traveller {
 	private int age;
 	private UUID id;
 	private ArrayList<Journey> journeys = new ArrayList<Journey>();	
+	
+	public Traveller(){
+		id = UUID.fromString("00000000-0000-0000-0000-000000000000");
+	}
 	
 	public String getName(){
 		return name;
@@ -74,4 +79,15 @@ public class Traveller {
 		return sf.saveTraveller(this) == 1;
 	}
 
+	
+	public String toJson() {
+		JsonString retVal = new JsonString();
+		
+		retVal.add("Name", name);
+		retVal.add("Id", id.toString());
+		retVal.add("PhoneNumber", phoneNumber);
+		retVal.add("Age", age);
+		
+		return retVal.toString();
+	}
 }
