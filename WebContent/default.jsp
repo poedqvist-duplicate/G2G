@@ -17,7 +17,7 @@
 </script>
 </head>
 <body>
-	<form action="Register" method="POST">
+	<form action="Register" method="POST" id="registerForm">
 		<label for="txtName">Namn: </label>
 		<input type="text" id="txtName" name="txtName" value="" />
 		<br/>
@@ -32,5 +32,7 @@
 		
 		<input type="button" value="Registrera" id="btnSend" />
 	</form>
+	
+	<div id="added"></div>
 </body>
 </html>
