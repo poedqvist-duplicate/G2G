@@ -26,8 +26,10 @@ public class Traveller {
 	private UUID id;
 	private ArrayList<Journey> journeys = new ArrayList<Journey>();	
 	
+	final private String UUID_MIN = "00000000-0000-0000-0000-000000000000";
+	
 	public Traveller(){
-		id = UUID.fromString("00000000-0000-0000-0000-000000000000");
+		id = UUID.fromString(UUID_MIN);
 	}
 	
 	public String getName(){
@@ -76,11 +78,15 @@ public class Traveller {
 	
 	public boolean saveTraveller(){
 		StorageFacade sf = new StorageFacade();
+		
+		if (id.toString().equals(UUID_MIN))
+			id = UUID.randomUUID();
+		
 		return sf.saveTraveller(this) == 1;
 	}
 
 	
-	public String toJson() {
+	public JsonString toJson() {
 		JsonString retVal = new JsonString();
 		
 		retVal.add("Name", name);
@@ -88,6 +94,6 @@ public class Traveller {
 		retVal.add("PhoneNumber", phoneNumber);
 		retVal.add("Age", age);
 		
-		return retVal.toString();
+		return retVal;
 	}
 }

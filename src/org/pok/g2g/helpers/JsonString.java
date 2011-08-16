@@ -37,8 +37,9 @@ public class JsonString {
 	public void add(String key, JsonString value){
 		if (json.length() != 0)
 			json += ",";
-		
+		System.out.println("json, before:" + json);
 		json += String.format("\"%s\":%s",key,value);
+		System.out.println("json, after:" + json);
 	}
 	
 	@Override

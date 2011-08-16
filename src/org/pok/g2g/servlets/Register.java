@@ -38,7 +38,10 @@ public class Register extends HttpServlet {
 			t.setPhoneNumber(request.getParameter("PhoneNumber"));
 			t.setAge(Integer.parseInt(request.getParameter("Age")));
 			
-			//Save & set response-object to show if it was success...
+			if(t.saveTraveller())
+				responseJson.add("Success", "true");
+			else
+				responseJson.add("Success", "false");
 			
 			responseJson.add("traveller", t.toJson());
 		}catch (NumberFormatException nfe){
