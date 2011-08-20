@@ -24,6 +24,7 @@ public class Traveller {
 	private int age;
 	private UUID id;
 	private ArrayList<Journey> journeys = new ArrayList<Journey>();	
+	private String password;
 	
 	final private String UUID_MIN = "00000000-0000-0000-0000-000000000000";
 	
@@ -75,6 +76,12 @@ public class Traveller {
 		this.id = id;
 	}
 	
+	/**
+	 * A method wich let's the traveller object save itself into the
+	 * db. If it hasnt been assigned a uuid value it will be given one.
+	 * @return		Returns true or false.
+	 */
+	
 	public boolean saveTraveller(){
 		StorageFacade sf = new StorageFacade();
 		
@@ -84,6 +91,10 @@ public class Traveller {
 		return sf.saveTraveller(this) == 1;
 	}
 
+	/**
+	 * A method that returns the object attributes as a json-string.
+	 * @return
+	 */
 	
 	public JsonString toJson() {
 		JsonString retVal = new JsonString();

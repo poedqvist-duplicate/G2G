@@ -10,20 +10,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.pok.g2g.domain.Traveller;
-import org.pok.g2g.domain.DomainRegister;
 import org.pok.g2g.helpers.JsonString;
 
 /**
- * Servlet implementation class Register
+ * Servlet implementation class TravellerRegistrationHandler
  */
-@WebServlet("/Register")
-public class Register extends HttpServlet {
+@WebServlet("/TravellerRegistrationHandler")
+public class TravellerRegistrationHandler extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Register() {
+    public TravellerRegistrationHandler() {
         super();
         // TODO Auto-generated constructor stub
     }

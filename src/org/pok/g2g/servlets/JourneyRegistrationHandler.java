@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.pok.g2g.domain.Journey;
 import org.pok.g2g.domain.Location;
-import org.pok.g2g.domain.DomainRegister;
 import org.pok.g2g.helpers.JsonString;
 
 /**
@@ -33,18 +32,8 @@ public class JourneyRegistrationHandler extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("startar dopost");
 		Journey j = new Journey();
 		JsonString responseJson = new JsonString(); 
-		
-		System.out.println(request.getParameter("oLatitude"));
-		System.out.println(request.getParameter("oAltitude"));
-		System.out.println(request.getParameter("oRadius"));
-		System.out.println(request.getParameter("dLatitude"));
-		System.out.println(request.getParameter("dAltitude"));
-		System.out.println(request.getParameter("dRadius"));
-		System.out.println(request.getParameter("jDescription"));
-		System.out.println(request.getParameter("amountOfPassengers"));
 		
 		try{
 			Location originLoc = new Location(Double.parseDouble(request.getParameter("oLatitude")), 
@@ -55,17 +44,10 @@ public class JourneyRegistrationHandler extends HttpServlet {
 					Double.parseDouble(request.getParameter("dAltitude")), 
 					Double.parseDouble(request.getParameter("dRadius")));
 			
-			System.out.println("origin" + originLoc.getGeoData());
-			System.out.println("dest" + destinationLoc.getGeoData());
-			
 			j.setOrigin(originLoc);
 			j.setDestination(destinationLoc);
 			j.setDescription(request.getParameter("jDescription"));
 			j.setAmountOfPassengers(Integer.parseInt(request.getParameter("amountOfPassengers")));
-			System.out.println("jamount" + j.getAmountOfPassengers());
-			
-			System.out.println(j.getAmountOfPassengers() + j.getDescription() + j.getDestination()
-					+ j.getOrigin());
 			
 			if(j.saveJourney())
 				responseJson.add("Success", "true");
