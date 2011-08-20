@@ -37,12 +37,12 @@ public class JourneyRegistrationHandler extends HttpServlet {
 		
 		try{
 			Location originLoc = new Location(Double.parseDouble(request.getParameter("oLatitude")), 
-					Double.parseDouble(request.getParameter("oAltitude")), 
-					Double.parseDouble(request.getParameter("oRadius")));
+												Double.parseDouble(request.getParameter("oAltitude")), 
+													Double.parseDouble(request.getParameter("oRadius")));
 			
 			Location destinationLoc = new Location(Double.parseDouble(request.getParameter("dLatitude")), 
-					Double.parseDouble(request.getParameter("dAltitude")), 
-					Double.parseDouble(request.getParameter("dRadius")));
+												Double.parseDouble(request.getParameter("dAltitude")), 
+													Double.parseDouble(request.getParameter("dRadius")));
 			
 			j.setOrigin(originLoc);
 			j.setDestination(destinationLoc);
