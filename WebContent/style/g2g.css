@@ -1,5 +1,112 @@
 @CHARSET "ISO-8859-1";
-form input{
-	font-family: verdana, monospace, serif;
-	font-size: 3 ex;
+body{
+	font-family: helvetica, arial, sans-serif;
+	/* Font-Size & em
+	 * Specify font-size in em, so that text can be resized in all browsers.
+	 * 16px is standard text-size in most browsers.
+	 * That gives us 1 em = 16 px.
+	 * We want to set standard font-size to 10 px (cause that looks nice with sans-serif types)
+	 * So every font-size specification should be relative to thisone.
+	 * If we want the heading (<h1>) to be 24 px we should specify that as:
+	 * 24(size we want in px) / 10(our reference/standard in px) = 2,4(the size in em) 
+	 */
+	font-size: 62.5%; /* This sets out standard: 10(our standard) / 16(standard) = 0,625*/
+	background-color:#DDD;
+}
+h1{
+	font-size: 4em;
+	font-family: impact, arial, sans-serif;
+	font-weight:bold;
+	color: #AF4;
+}
+h2{
+	font-size:3em;
+	font-family: impact, arial, sans-serif;
+	font-weight:bold;
+	color: #AF4;
+}
+ul{
+	color:#000;
+}
+div{
+	background-color: white;
+	margin: 0px;
+	padding: 0px;
+}
+	div.content{
+		margin-left: 90px;
+		margin-right: 90px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+	div.headContent{
+		min-height: 50px;
+		text-align: center;
+	}
+	div.mainContent{
+		min-height: 600px;
+	}
+	div.menuContent{
+		min-height: 150px;
+		height:15%;
+		background-color: #999;
+		padding-top: 10px;
+	}
+		div.menuContent ul{
+			color: #FFF;
+			list-style-type: none;
+		}
+		div.menuContent ul li{
+			float:left;
+			width:150px;
+		}
+		div.menuContent ul li a:link{	/* Menu link styles */
+			text-decoration: none;
+			color: white;
+		}
+		div.menuContent ul li a:visited{
+			text-decoration: none;
+			color: white;
+		}
+		div.menuContent ul li a:hover{
+			text-decoration: underline;
+			color: #AF4;
+		}
+		div.menuContent ul li a:active{
+			text-decoration: underline;
+			color: #F94;
+		}
+		
+div#map{
+	float:left;
+	min-height: 600px;
+	width: 200px;
+}
+		
+a:link{
+	color: #AF4;
+	text-decoration: none;
+}
+a:visited{
+	color: #AF4;
+	text-decoration: none;
+}
+a:hover{
+	color: #AF4;
+	text-decoration: underline;
+}
+a:active{
+	color: #CF6;
+	text-decoration: underline;
+}
+
+div label{
+	width: 45%;
+	display: inline-block;
+	/*float: left;*/
+}
+div input{
+	width: 45%;
+	display: inline-block;
+	/*float:right;*/
 }
