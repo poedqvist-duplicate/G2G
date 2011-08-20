@@ -7,8 +7,8 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 
-import org.pok.g2g.domain.City;
 import org.pok.g2g.domain.Journey;
+import org.pok.g2g.domain.Location;
 import org.pok.g2g.domain.Traveller;
 
 import org.junit.Test;
@@ -44,13 +44,17 @@ public class TravellerTest {
 		p1.setAge(23);
 		
 		//Creates two cities
-		City t1 = new City("Göteborg");
-		City t2 = new City("Stockholm");
+		Location t1 = new Location(78.1, 10.5, 5.0);
+		Location t2 = new Location(45.1, 2.5, 1.0);
 		
 		//Creates two journeys that are to be added to p1's Journey[]
-		Journey j = new Journey(t1, t2);
-		Journey j2 = new Journey(t2, t1);
+		Journey j = new Journey();
+		Journey j2 = new Journey();
 		
+		j.setOrigin(t1);
+		j.setDestination(t2);
+		j2.setOrigin(t2);
+		j2.setDestination(t1);
 		//Adds journey
 		p1.addJourney(j);
 		p1.addJourney(j2);
@@ -59,8 +63,8 @@ public class TravellerTest {
 		ArrayList<Journey> testArr = p1.getAllJourneys();
 		
 		//Checks if first elemts has the correct end- and startcities
-		assertEquals("Göteborg", testArr.get(0).getStartCity());
-		assertEquals("Stockholm", testArr.get(0).getEndCity());
+		assertEquals("78.1" + " " + "10.5" + " " + "5.0", testArr.get(0).getOrigin());
+		assertEquals("45.1" + " " + "2.5" + " " + "1.0", testArr.get(0).getDestination());
 		
 	}
 	

@@ -53,30 +53,5 @@ public class Register extends HttpServlet {
 		}
 	}
 	
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void actionForwardt(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Repository r1 = new Repository(request);
-		
-		if(r1.checkIfInputIsCorrect()){
-			JsonString responseJson = new JsonString(); 
-			DomainRegister d1 = r1.getDomainRegister();
-		
-			try{ 
-						if(t.saveTraveller())
-							responseJson.add("Success", "true");
-						else
-							responseJson.add("Success", "false");
-			
-				responseJson.add("traveller", t.toJson());
-		}catch (NumberFormatException nfe){
-			responseJson.add("ERROR", nfe.getMessage());
-		}finally{
-			response.setContentType("text/html; charset=UTF-8");
-			response.getWriter().print(responseJson.toString());
-		}
-		}
-	}
-
+	
 }

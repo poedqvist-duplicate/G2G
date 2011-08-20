@@ -21,21 +21,8 @@ public class Repository {
 		hsr = request;
 	}
 	
-	public boolean checkIfInputIsCorrect(){
-		boolean input;
-		if(hsr.getParameter("Name").equals("")) 
-			input = false;
-		else 
-			if(hsr.getParameter("PhoneNumber").equals(""))
-				input = false;
-			else 
-				if(hsr.getParameter("Age").equals(""))
-					input = false;
-				else input = true;
-		return input;
-	}
-	
 	public DomainRegister getDomainRegister(){
 		return dr;
 	}
+	
 }

@@ -4,7 +4,6 @@ package org.pok.g2g.domain;
  * 
  */
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.UUID;
 

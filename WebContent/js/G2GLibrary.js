@@ -13,7 +13,74 @@ G2GLibrary.prototype = function(){
 		$('#btnSend').live('click', function(){
 			registerTraveller();
 		});
+		
+		$('#btnSendToJReg').die();
+		$('#btnSendToJReg').live('click', function(){
+			registerJourney();
+		});
 	},
+	
+	registerJourney = function(){
+		var JRegFormData = {
+				"oLatitude" : $('#txtoLatitude').val(),
+				"oAltitude" : $('#txtoAltitude').val(),
+				"oRadius"	: $('#txtoRadius').val(),
+				"dLatitude" : $('#txtdLatitude').val(),
+				"dAltitude" : $('#txtdAltitude').val(),
+				"dRadius"	: $('#txtdRadius').val(),
+				"amountOfPassengers" : $('#txtamountOfPassengers').val(),
+				"jDescription" : $('#txtDescription').val()
+		};
+	
+		//Send AsynchronJavascriptAndXML
+		// 		(XMLHttpRequest) a.k.a. AJAX
+		$.ajax({
+			   type: "POST", 	//What method we want to use eg. POST/GET
+			   url: "JourneyRegistrationHandler",	//The URL wich we are posting the data to
+			   dataType: "json",//What kind of information will we get back?
+			   data: JRegFormData,	// Pass the collected data to the servlet
+			   success: function(journey){	//The main success scenario
+				   var tHtml = '';
+				   tHtml += '<table>'
+					     +    '<th>'
+					     +      '<tr>'
+					     +        '<td>Attribut:</td>'
+					     +        '<td>Värde:</td>'
+					     +      '</tr>'
+					     +    '</th>'
+					     +    '<tb>'
+					     +      '<tr>'
+					     +        '<td>Utgångspunkt:</td>'
+					     +        '<td>' + journey.journey.Origin + '</td>'
+					     +      '</tr>'
+					     +      '<tr>'
+					     +        '<td>Destination:</td>'
+					     +        '<td>' + journey.journey.Destination + '</td>'
+					     +      '</tr>'
+					     +      '<tr>'
+					     +        '<td>Antal passagerare:</td>'
+					     +        '<td>' + journey.journey.AmountOfPassengers + '</td>'
+					     +      '</tr>'
+					     +      '<tr>'
+					     +        '<td>Beskrivning:</td>'
+					     +        '<td>' + journey.journey.Description + '</td>'
+					     +      '</tr>'
+					     +      '<tr>'
+					     +        '<td>id:</td>'
+					     +        '<td>' + journey.journey.journeyId + '</td>'
+					     +      '</tr>'
+					     +    '</tb>'
+					     +  '</table>';
+				   
+				   //$('#registerForm').after(tHtml);
+				   $('#added').html(tHtml);
+			   },
+			   error:function(err){
+				   alert(err);
+			   }
+		});
+	},
+	
 	registerTraveller = function(){
 		//Collect the data from the fields
 		var formData = {
