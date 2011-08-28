@@ -7,11 +7,12 @@ var G2GLibrary = function(){
 };
 
 G2GLibrary.prototype = function(){
-
+	var view = undefined;
+	
 	var init = function(){		
 		var sPath = window.location.pathname;
 		var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
-		
+		//alert('first' + sPage);
 		switch (sPage.toLowerCase()){
 		case 'default.jsp', '':
 			setupDefault();
@@ -19,16 +20,17 @@ G2GLibrary.prototype = function(){
 		case 'about.jsp' : 
 			setupAbout();
 			break;
-		case 'regTrav.jsp' : 
+		case 'regtrav.jsp' : 
+			//alert('Almost first..');
 			setupRegTrav();
 			break;
-		case 'regJourney.jsp' : 
+		case 'regjourney.jsp' : 
 			setupRegJourney();
 			break;
-		case 'myPage.jsp' : 
+		case 'mypage.jsp' : 
 			setupMyPage();
 			break;
-		case 'myJourneys.jsp' : 
+		case 'myjourneys.jsp' : 
 			setupMyJourneys();
 			break;
 		case 'login.jsp' : 
@@ -63,7 +65,11 @@ G2GLibrary.prototype = function(){
 	},
 	setupDefault = function(){},
 	setupAbout = function(){},
-	setupRegTrav = function(){},
+	setupRegTrav = function(){
+		view = new regTravView();
+		//alert('almost there');
+		//view.init();
+	},
 	setupRegJourney = function(){},
 	setupMyPage = function(){},
 	setupMyJourneys = function(){},

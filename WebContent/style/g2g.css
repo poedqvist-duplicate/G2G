@@ -117,6 +117,9 @@ div input{
 	display: inline-block;
 	/*float:right;*/
 }
+div.hiddenDiv{
+	display:none;
+}
 
 ul{
 	
@@ -124,3 +127,13 @@ ul{
 	ul.goals{
 		list-style-type: none;
 	}
+	
+.button{
+	/*This css-class defines the a button that should keep
+	   its look independent of OS and/or browser*/
+	   min-width: 50px; /*?*/
+	   margin:5px;
+	   background-color: #AF4;
+	   color:black;
+	   border-color: #AF4;/*dashed;*/	   
+}

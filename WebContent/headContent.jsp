@@ -7,5 +7,6 @@
 	var lib;
 	window.onload = function(){
 		lib = new G2GLibrary();
+		//lib.init();
 	};
 </script>
