@@ -5,9 +5,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<script type="text/javascript" src="js/regTrav.js"></script>
-<%@include file="headContent.jsp" %>
+
+<script type="text/javascript" src="js/regTravView.js"></script>
 <link rel="stylesheet" type="text/css" href="style/reg.css" />
+
+<script type="text/javascript">
+	pageInit = function(){
+		var p = new RegTravView();
+		lib.init(p);
+	};
+</script>
+
+<%@include file="headContent.jsp" %>
 </head>
 <body>
 	<%@include file="bodyBegin.jsp" %>

@@ -3,48 +3,21 @@
  *   Revealing Prototype Pattern
  */
 var G2GLibrary = function(){
-	this.init();
+	//this.init(null);
 };
 
 G2GLibrary.prototype = function(){
 	var view = undefined;
 	
-	var init = function(){		
-		var sPath = window.location.pathname;
-		var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
-		//alert('first' + sPage);
-		switch (sPage.toLowerCase()){
-		case 'default.jsp', '':
-			setupDefault();
-			break;
-		case 'about.jsp' : 
-			setupAbout();
-			break;
-		case 'regtrav.jsp' : 
-			//alert('Almost first..');
-			setupRegTrav();
-			break;
-		case 'regjourney.jsp' : 
-			setupRegJourney();
-			break;
-		case 'mypage.jsp' : 
-			setupMyPage();
-			break;
-		case 'myjourneys.jsp' : 
-			setupMyJourneys();
-			break;
-		case 'login.jsp' : 
-			setupLogin();
-			break;
-		case 'search.jsp' : 
-			setupSearch();
-			break;
-		default:
-		}
+	var init = function(xLib){		
+		
 		
 		//Common setup..
 		createPageLinks(); //Menu
-		
+		if (xLib != null){
+			view = xLib;
+			view.init();//pageInit();
+		}
 		/*
 		 * 
 		//alert('Sida:' + sPage.toLowerCase());
@@ -63,18 +36,6 @@ G2GLibrary.prototype = function(){
 		 * 
 		 * */
 	},
-	setupDefault = function(){},
-	setupAbout = function(){},
-	setupRegTrav = function(){
-		view = new regTravView();
-		//alert('almost there');
-		//view.init();
-	},
-	setupRegJourney = function(){},
-	setupMyPage = function(){},
-	setupMyJourneys = function(){},
-	setupLogin = function(){},
-	setupSearch = function(){},
 	registerJourney = function(){
 		var JRegFormData = {
 				"oLatitude" : $('#txtoLatitude').val(),

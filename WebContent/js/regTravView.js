@@ -1,12 +1,11 @@
-var regTravView = function(){
-	this.init();
+var RegTravView = function(){
+	//this.init();
 };
 
-
-regTravView.prototype = function(){
+RegTravView.prototype = function(){
 	var init = function(){
 		//initBtnPos();
-		//alert('btw this works ! WOWOW');
+		alert('btw this works ! WOWOW');
 		var btnHtml =   '<div style="width:50%;height:10px;float:left;">'
 						+ '<input class="button" style="float:right;margin-right:5%;" type="button" value="Registrera" id="btnRegister" />'
 						+ '</div>';
@@ -46,9 +45,6 @@ regTravView.prototype = function(){
 			   err: function(err){
 				   alert(err);
 			   }});
-	},
-	doubleCheckPassword(event){
-		alert(event);
 	};
 	
 	

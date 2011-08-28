@@ -5,8 +5,10 @@
 <script type="text/javascript" src="js/G2GLibrary.js"></script>
 <script type="text/javascript">
 	var lib;
-	window.onload = function(){
+	//window.onload
+	$(document).ready(function(){
 		lib = new G2GLibrary();
 		//lib.init();
-	};
+		pageInit();
+	});
 </script>
